@@ -1,0 +1,78 @@
+.history-item {
+  margin-bottom: 12px;
+}
+
+.history-card {
+  display: flex;
+  align-items: center;
+  background-color: #f1f5f9;
+  padding: 12px;
+  border-radius: 10px;
+  gap: 15px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.dark .history-card {
+  background-color: #334155; 
+  color: #e2e8f0;
+}
+.history-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+.dark .history-card:hover {
+  background-color: #475569;
+}
+
+.history-time {
+  font-weight: bold;
+  color: #1e293b;
+  min-width: 70px;
+}
+.dark .history-time {
+  color: #e2e8f0;
+}
+.history-logo {
+  width: 40px;
+  height: 40px;
+}
+
+.history-details {
+  flex-grow: 1;
+}
+
+.history-title-text {
+  font-size: 16px;
+  margin: 0 0 4px 0;
+}
+
+.history-domain {
+  display: inline-flex;
+  align-items: center;
+  color: #3b82f6;
+  font-size: 14px;
+  gap: 4px;
+  text-decoration: none;
+}
+.dark .history-domain {
+  color: #93c5fd;
+}
+.external-icon {
+  font-size: 14px;
+  margin-left: 2px;
+}
+
+
+.delete-icon {
+  color: #f83030;
+  font-size: 24px;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  transform: scale(1.1);
+}

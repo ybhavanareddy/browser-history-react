@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
+import BrowserHistory from './components/BrowserHistory'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    isDarkMode: false,
+  }
+
+  toggleTheme = () => {
+    this.setState(prevState => ({ isDarkMode: !prevState.isDarkMode }))
+  }
+
+  render() {
+    const { isDarkMode } = this.state
+    const appClass = isDarkMode ? 'dark' : 'light'
+
+    return (
+      <main className={`app-main ${appClass}`}>
+        <button className="theme-toggle" onClick={this.toggleTheme}>
+          {isDarkMode ? '☀️ Light' : '🌙 Dark'}
+        </button>
+        <BrowserHistory isDarkMode={isDarkMode}/>
+      </main>
+    )
+  }
 }
 
-export default App;
+export default App
